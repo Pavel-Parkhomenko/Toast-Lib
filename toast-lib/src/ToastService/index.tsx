@@ -9,11 +9,13 @@ const info = require('../svgs/info.svg') as string;
 const success = require('../svgs/success.svg') as string;
 const warning = require('../svgs/warning.svg') as string;
 
+let toastList: object[] = [];
+
 class ToastService {
   private static toastService: ToastService
-  private toastList: string[] | undefined
+  private toastList: object[] | undefined = []
 
-  constructor(toastList: string[]) {
+  constructor(toastList: object[]) {
     if(ToastService.toastService)
       return ToastService.toastService
 
@@ -61,7 +63,7 @@ class ToastService {
   }
 
   getId() {
-    return Math.floor(Math.random() * 101);
+    return Math.floor(Math.random() * 10);
   }
 
   getIcon(prop: any) {
@@ -84,16 +86,19 @@ class ToastService {
       titleColor: this.getTitleColor(prop),
       bgColor: this.getBgColor(prop),
       icon: this.getIcon(prop),
+      id: this.getId()
     };
   }
 
-  createToast(prop: IToastProps) {
-    console.log(this.getProp(prop))
+  createToast(styleContainerToast: any, prop: IToastProps) {
+    if(toastList.length <= 3)
+      toastList = [...toastList, this.getProp(prop)]
+
     return (
-      <ToastContainer>
-        <Toast
-          {...this.getProp(prop)}
-        />
+      <ToastContainer
+        styleContainerToast={styleContainerToast}
+        toastList={toastList}
+      >
       </ToastContainer>
     );
   }

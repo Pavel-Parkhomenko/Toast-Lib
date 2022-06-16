@@ -27,7 +27,9 @@ export default {
 
 export const ToastExample = (args: any) =>
   toastService.createToast({
+    position: POSITION[args.toastPosition] || POSITION["topLeft"]
+  },{
     type: args.toastType,
-    spaces: args.toastSpaces,
-    position: POSITION[args.toastPosition]
+    spaces: args.toastSpaces | 0,
+    delay: 3000
   });

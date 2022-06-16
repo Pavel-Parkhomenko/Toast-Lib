@@ -21,6 +21,13 @@ export const Title = {
   warning: 'Warning toast example',
 }
 
+// export const POSITION = {
+//   topLeft: "topLeft",
+//   topRight: "topRight",
+//   bottomLeft: "bottomLeft",
+//   bottomRight: "bottomRight"
+// }
+
 export const POSITION = {
   topLeft: {
     top: 0,

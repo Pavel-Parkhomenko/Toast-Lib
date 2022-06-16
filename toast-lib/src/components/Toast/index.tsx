@@ -1,26 +1,40 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {IToastProps} from "../../Interfaces";
-import {CloseButtonStyled, ToastStyled, ToastTitle} from "./style";
+import {CloseContainer, ToastStyled, ToastTitle} from "./style";
+const close = require('../../svgs/close-2.svg') as string;
 
 export const Toast: React.FC<IToastProps> = ({
   title,
   bgColor,
   titleColor,
   icon,
-  position,
   spaces,
   delay
 }) => {
+  const [isDeleteToast, setIsDeleteToast] = useState(false)
+  useEffect(() => {
+    const deleteInterval = setInterval(() => {
+      setIsDeleteToast(true)
+    }, delay)
+
+    return () => {
+      clearInterval(deleteInterval);
+    };
+  });
+
+  if(isDeleteToast) return null
+
   return(
     <ToastStyled
       titleColor = {titleColor}
       bgColor = {bgColor}
-      position={position}
       spaces = {spaces}
     >
       <img alt="icon" src={icon}/>
       <ToastTitle>{title}</ToastTitle>
-      <CloseButtonStyled> close </CloseButtonStyled>
+      <CloseContainer>
+        <img alt="icon-close" src={close}/>
+      </CloseContainer>
     </ToastStyled>
   )
 }

@@ -1,7 +1,6 @@
 export interface IToastStyled{
   bgColor: string,
   titleColor: string,
-  position: object,
   spaces: string
 }
 
