@@ -1,16 +1,24 @@
 import React from 'react'
 import { Toast } from '../components/Toast'
 import { toastService } from '../ToastService'
-import { POSITION, SPACES } from '../constants'
+import {FROM_ANIMATION, POSITION, SPACES, TOAST_TYPES} from '../constants'
 
 export default {
   title: 'Toast',
   argTypes: {
+    toastText: {
+      type: 'string',
+      description: "наполнение тоста",
+      defaultValue: "default text for example",
+      control: {
+        type: "text"
+      },
+    },
     toastType: {
       type: 'string',
       description: "вариант внешнего вида",
       defaultValue: "success",
-      options: ['error', 'warning', 'success', 'info'],
+      options: Object.values(TOAST_TYPES),
       control: {
         type: "inline-radio"
       },
@@ -33,11 +41,29 @@ export default {
         type: "inline-radio",
       },
     },
+    animationFromType:{
+      type: "string",
+      description: "тип анимации при появлении",
+      defaultValue: "fromBottom",
+      options: Object.values(FROM_ANIMATION),
+      control: {
+        type: "inline-radio",
+      },
+    },
     toastDelay:{
       type: "number",
       description: "margin контейнера",
       defaultValue: 3000,
       options: [3000,4000,5000,6000,7000,8000,9000],
+      control: {
+        type: "inline-radio",
+      },
+    },
+    toastAnimationDelay: {
+      type: "number",
+      description: "длительность анимации",
+      defaultValue: 0.7,
+      options: [0.3, 0.4, 0.5, 1, 2],
       control: {
         type: "inline-radio",
       },
@@ -51,6 +77,9 @@ export const ToastExample = (args: any) =>
     autoDelete: true,
     delay: args.toastDelay,
     spaces: args.toastSpaces,
+    animationDelay: args.toastAnimationDelay,
+    animationFromType: args.animationFromType
   },{
     type: args.toastType,
+    text: args.toastText,
   });

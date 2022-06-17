@@ -1,5 +1,5 @@
 import React from 'react'
-import {Color, Title, Types} from "../constants";
+import {Color, TOAST_TITLE, TOAST_TYPES} from "../constants";
 import {ToastContainer} from "../components/Container";
 import {IToastContainer, IToastProps} from "../Interfaces";
 
@@ -24,39 +24,39 @@ class ToastService {
 
   getTitle(prop: any){
     switch(prop.type){
-      case Types.success:
-        return Title.success
-      case Types.error:
-        return Title.error;
-      case Types.info:
-        return Title.info;
-      case Types.warning:
-        return Title.warning;
+      case TOAST_TYPES.success:
+        return TOAST_TITLE.success
+      case TOAST_TYPES.error:
+        return TOAST_TITLE.error;
+      case TOAST_TYPES.info:
+        return TOAST_TITLE.info;
+      case TOAST_TYPES.warning:
+        return TOAST_TITLE.warning;
     }
   }
 
   getBgColor(prop: any) {
     switch (prop.type) {
-      case Types.success:
+      case TOAST_TYPES.success:
         return Color.green;
-      case Types.error:
+      case TOAST_TYPES.error:
         return Color.red;
-      case Types.info:
+      case TOAST_TYPES.info:
         return Color.purple;
-      case Types.warning:
+      case TOAST_TYPES.warning:
         return Color.yellow;
     }
   }
 
   getTitleColor(prop: any) {
     switch (prop.type) {
-      case Types.success:
+      case TOAST_TYPES.success:
         return Color.white;
-      case Types.error:
+      case TOAST_TYPES.error:
         return Color.white;
-      case Types.info:
+      case TOAST_TYPES.info:
         return Color.white;
-      case Types.warning:
+      case TOAST_TYPES.warning:
         return Color.black;
     }
   }
@@ -67,13 +67,13 @@ class ToastService {
 
   getIcon(prop: any) {
     switch (prop.type) {
-      case Types.success:
+      case TOAST_TYPES.success:
         return success;
-      case Types.error:
+      case TOAST_TYPES.error:
         return error;
-      case Types.info:
+      case TOAST_TYPES.info:
         return info;
-      case Types.warning:
+      case TOAST_TYPES.warning:
         return warning;
     }
   }

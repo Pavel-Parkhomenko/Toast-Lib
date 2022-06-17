@@ -1,11 +1,19 @@
 import React, {useEffect, useState} from 'react'
-import {IPropsToastContainer, IToastProps} from '../../Interfaces'
+import {IToastProps} from '../../Interfaces'
 import {Portal} from '../Portal'
 import {Toast} from '../Toast'
 import {ContainerToastStyle} from "./style";
 
 export const ToastContainer: React.FC<any> = ({styleContainerToast, toastList}) => {
-  const { position, delay, autoDelete, deleteToastById, spaces } = styleContainerToast
+  const {
+    position,
+    delay,
+    autoDelete,
+    deleteToastById,
+    spaces,
+    animationDelay,
+    animationFromType
+  } = styleContainerToast
 
   const [toastListState, setToastListState] = useState<IToastProps[]>([])
 
@@ -29,11 +37,15 @@ export const ToastContainer: React.FC<any> = ({styleContainerToast, toastList}) 
     setToastListState([...deleteToastById(id)])
   }
 
+  console.log(animationFromType)
+
   return (
     <Portal>
       <ContainerToastStyle
         position={position}
         spaces = {spaces}
+        animationDelay = {animationDelay}
+        animationFromType={animationFromType}
       >
         {toastListState.map((toast: JSX.IntrinsicAttributes & IToastProps) =>
           <Toast key={toast.id} {...{...toast, deleteFromToastList}} />)}

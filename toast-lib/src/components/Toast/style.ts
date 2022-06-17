@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+
 import {IToastStyled} from "../../Interfaces";
 
 export const ToastStyled = styled.div<IToastStyled>`
   z-index: 100;
-  height: 70px;
-  width: 450px;
+  min-height: 70px;
+  min-width: 450px;
   border-radius: 15px;
   padding: 15px;
   display: flex;
@@ -14,13 +15,14 @@ export const ToastStyled = styled.div<IToastStyled>`
   background-color: ${({ bgColor }) => bgColor};
 `
 
-export const CloseButtonStyled = styled.button`
-  width: 50px;
-  height: 50px;
+export const ToastTitle = styled.p`
+  color: gray;
+  font-size: 18px;
+  margin: 0 0 5px 5px;
 `
 
-export const ToastTitle = styled.p`
-  font-size: 24px;
+export const ToastText = styled.p`
+  font-size: 20px;
 `
 
 export const CloseContainer = styled.div`

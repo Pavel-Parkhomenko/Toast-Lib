@@ -7,26 +7,26 @@ export const Color = {
   yellow: 'yellow',
 }
 
-export const Types = {
+export const TOAST_TYPES = {
   success: 'success',
   error: 'error',
   info: 'info',
   warning: 'warning',
 }
 
-export const Title = {
-  success: 'Success toast example',
-  error: 'Error toast example',
-  info: 'Info toast example',
-  warning: 'Warning toast example',
+export const TOAST_TITLE = {
+  success: 'Success',
+  error: 'Error',
+  info: 'Info',
+  warning: 'Warning',
 }
 
-// export const POSITION = {
-//   topLeft: "topLeft",
-//   topRight: "topRight",
-//   bottomLeft: "bottomLeft",
-//   bottomRight: "bottomRight"
-// }
+export const FROM_ANIMATION = {
+  fromLeft: "fromLeft",
+  fromRight: "fromRight",
+  fromTop: "fromTop",
+  fromBottom: "fromBottom"
+}
 
 export const POSITION = {
   topLeft: {
