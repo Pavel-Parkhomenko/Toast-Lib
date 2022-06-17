@@ -6,7 +6,6 @@ export const ToastStyled = styled.div<IToastStyled>`
   height: 70px;
   width: 450px;
   border-radius: 15px;
-  margin: ${({ spaces }) => spaces}px;
   padding: 15px;
   display: flex;
   align-items: center;

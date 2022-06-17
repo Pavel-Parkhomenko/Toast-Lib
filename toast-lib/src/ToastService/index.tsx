@@ -1,21 +1,20 @@
 import React from 'react'
 import {Color, Title, Types} from "../constants";
 import {ToastContainer} from "../components/Container";
-import {Toast} from '../components/Toast'
-import {IToastProps} from "../Interfaces";
+import {IToastContainer, IToastProps} from "../Interfaces";
 
 const error = require('../svgs/error.svg') as string;
 const info = require('../svgs/info.svg') as string;
 const success = require('../svgs/success.svg') as string;
 const warning = require('../svgs/warning.svg') as string;
 
-let toastList: object[] = [];
+let toastList: IToastProps[] = [];
 
 class ToastService {
   private static toastService: ToastService
-  private toastList: object[] | undefined = []
+  private toastList: IToastProps[] | undefined = []
 
-  constructor(toastList: object[]) {
+  constructor(toastList: IToastProps[]) {
     if(ToastService.toastService)
       return ToastService.toastService
 
@@ -63,7 +62,7 @@ class ToastService {
   }
 
   getId() {
-    return Math.floor(Math.random() * 10);
+    return Math.floor(Math.random() * 111);
   }
 
   getIcon(prop: any) {
@@ -90,9 +89,17 @@ class ToastService {
     };
   }
 
-  createToast(styleContainerToast: any, prop: IToastProps) {
+  deleteToastById(id: number): IToastProps[]{
+    const deleteToastIndex = toastList.findIndex(toast => toast.id === id);
+    toastList.splice(deleteToastIndex, 1);
+    return toastList
+  }
+
+  createToast(styleContainerToast: IToastContainer, prop: IToastProps) {
     if(toastList.length <= 3)
       toastList = [...toastList, this.getProp(prop)]
+
+    styleContainerToast.deleteToastById = this.deleteToastById
 
     return (
       <ToastContainer
