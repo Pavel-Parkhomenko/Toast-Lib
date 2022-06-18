@@ -1,1 +1,1 @@
-export * from './IToastProps'
+export * from './interfaces'

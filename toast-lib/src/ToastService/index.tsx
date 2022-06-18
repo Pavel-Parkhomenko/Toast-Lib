@@ -1,14 +1,14 @@
 import React from 'react'
-import {Color, TOAST_TITLE, TOAST_TYPES} from "../constants";
-import {ToastContainer} from "../components/Container";
-import {IToastContainer, IToastProps} from "../Interfaces";
+import { Color, TOAST_TITLE, TOAST_TYPES } from "../constants"
+import { ToastContainer } from "../components/Container"
+import { IToastContainer, IToastProps } from "../Interfaces"
 
-const error = require('../svgs/error.svg') as string;
-const info = require('../svgs/info.svg') as string;
-const success = require('../svgs/success.svg') as string;
-const warning = require('../svgs/warning.svg') as string;
+const error = require('../svgs/error.svg') as string
+const info = require('../svgs/info.svg') as string
+const success = require('../svgs/success.svg') as string
+const warning = require('../svgs/warning.svg') as string
 
-let toastList: IToastProps[] = [];
+let toastList: IToastProps[] = []
 
 class ToastService {
   private static toastService: ToastService
@@ -27,54 +27,54 @@ class ToastService {
       case TOAST_TYPES.success:
         return TOAST_TITLE.success
       case TOAST_TYPES.error:
-        return TOAST_TITLE.error;
+        return TOAST_TITLE.error
       case TOAST_TYPES.info:
-        return TOAST_TITLE.info;
+        return TOAST_TITLE.info
       case TOAST_TYPES.warning:
-        return TOAST_TITLE.warning;
+        return TOAST_TITLE.warning
     }
   }
 
   getBgColor(prop: any) {
     switch (prop.type) {
       case TOAST_TYPES.success:
-        return Color.green;
+        return Color.green
       case TOAST_TYPES.error:
-        return Color.red;
+        return Color.red
       case TOAST_TYPES.info:
-        return Color.purple;
+        return Color.purple
       case TOAST_TYPES.warning:
-        return Color.yellow;
+        return Color.yellow
     }
   }
 
   getTitleColor(prop: any) {
     switch (prop.type) {
       case TOAST_TYPES.success:
-        return Color.white;
+        return Color.white
       case TOAST_TYPES.error:
-        return Color.white;
+        return Color.white
       case TOAST_TYPES.info:
-        return Color.white;
+        return Color.white
       case TOAST_TYPES.warning:
-        return Color.black;
+        return Color.black
     }
   }
 
   getId() {
-    return Math.floor(Math.random() * 111);
+    return Math.floor(Math.random() * 111)
   }
 
   getIcon(prop: any) {
     switch (prop.type) {
       case TOAST_TYPES.success:
-        return success;
+        return success
       case TOAST_TYPES.error:
-        return error;
+        return error
       case TOAST_TYPES.info:
-        return info;
+        return info
       case TOAST_TYPES.warning:
-        return warning;
+        return warning
     }
   }
 
@@ -86,17 +86,17 @@ class ToastService {
       bgColor: this.getBgColor(prop),
       icon: this.getIcon(prop),
       id: this.getId()
-    };
+    }
   }
 
   deleteToastById(id: number): IToastProps[]{
-    const deleteToastIndex = toastList.findIndex(toast => toast.id === id);
-    toastList.splice(deleteToastIndex, 1);
+    const deleteToastIndex = toastList.findIndex(toast => toast.id === id)
+    toastList.splice(deleteToastIndex, 1)
     return toastList
   }
 
   createToast(styleContainerToast: IToastContainer, prop: IToastProps) {
-    if(toastList.length <= 3)
+    if(toastList.length < 3)
       toastList = [...toastList, this.getProp(prop)]
 
     styleContainerToast.deleteToastById = this.deleteToastById
@@ -105,9 +105,8 @@ class ToastService {
       <ToastContainer
         styleContainerToast={styleContainerToast}
         toastList={toastList}
-      >
-      </ToastContainer>
-    );
+      />
+    )
   }
 }
 

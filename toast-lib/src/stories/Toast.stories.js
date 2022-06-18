@@ -1,7 +1,6 @@
 import React from 'react'
-import { Toast } from '../components/Toast'
 import { toastService } from '../ToastService'
-import {FROM_ANIMATION, POSITION, SPACES, TOAST_TYPES} from '../constants'
+import { FROM_ANIMATION, POSITION, SPACES, TOAST_TYPES } from '../constants'
 
 export default {
   title: 'Toast',
@@ -76,10 +75,10 @@ export const ToastExample = (args: any) =>
     position: POSITION[args.toastPosition],
     autoDelete: true,
     delay: args.toastDelay,
-    spaces: args.toastSpaces,
     animationDelay: args.toastAnimationDelay,
-    animationFromType: args.animationFromType
+    spaces: args.toastSpaces,
   },{
     type: args.toastType,
     text: args.toastText,
-  });
+    animationFromType: args.animationFromType,
+  })

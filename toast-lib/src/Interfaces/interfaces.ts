@@ -9,8 +9,8 @@ export interface IToastProps extends IToastStyled {
   text: string,
   icon: string,
   id: number,
-  spaces: string,
   deleteFromToastList: (id: number) => void,
+  animationFromType: string,
 }
 
 export interface IToastContainer{
@@ -19,7 +19,7 @@ export interface IToastContainer{
   delay: number,
   deleteToastById: (id: number) => IToastProps[],
   animationDelay: number,
-  animationFromType: string
+  spaces: number,
 }
 
 export interface IPropsToastContainer {

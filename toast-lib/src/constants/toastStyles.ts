@@ -47,4 +47,4 @@ export const POSITION = {
   },
 }
 
-export const SPACES = [0, 4, 8, 16, 32, 64, 128];
+export const SPACES = [0, 4, 8, 16, 32, 64, 128]

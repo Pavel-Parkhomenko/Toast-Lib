@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import {IToastStyled} from "../../Interfaces";
+import { IToastStyled } from "../../Interfaces"
 
 export const ToastStyled = styled.div<IToastStyled>`
   z-index: 100;

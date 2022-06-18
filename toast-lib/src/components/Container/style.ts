@@ -38,13 +38,36 @@ const fromTop = keyframes`
 
 export const ContainerToastStyle = styled.div<any>`
   position: fixed;
-  margin: ${({ spaces }) => spaces}px;
-
-  & > div:last-child{
-    // animation-name: ${({ animationFromType }) => animationFromType};
-    // animation-delay: ${({ animationDelay }) => animationDelay}s;
-    animation: ${"fromBottom"} 0.9s;
-  }
+  margin: 10px;
+  user-select: none;
   
+  & > div{
+    margin-bottom: ${({ spaces }) => spaces}px;
+  }
+
+  .fromBottom{
+    animation: ${fromBottom} ${({ animationDelay }) => animationDelay}s;
+  }
+
+  .fromTop{
+    animation: ${fromTop} ${({ animationDelay }) => animationDelay}s;
+  }
+
+  .fromLeft{
+    animation: ${fromLeft} ${({ animationDelay }) => animationDelay}s;
+  }
+
+  .fromRight{
+    animation: ${fromRight} ${({ animationDelay }) => animationDelay}s;
+  }
+
+  .delete-right {
+    transition: transform 0.6s ease-in-out;
+    animation: ${fromRight} 0.7s;
+  }
+  .delete-left {
+    transition: transform 0.6s ease-in-out;
+    animation: ${fromLeft} 0.7s;
+  }
   ${({ position }) => position}
 `
