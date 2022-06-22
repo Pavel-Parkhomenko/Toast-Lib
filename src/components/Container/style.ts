@@ -38,7 +38,7 @@ const fromTop = keyframes`
 
 export const ContainerToastStyle = styled.div<any>`
   position: fixed;
-  margin: 10px;
+  margin: ${({ spaces }) => spaces[0]};
   user-select: none;
   
   & > div{

@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { IToastProps } from '../../Interfaces'
 import { CloseContainer, ToastStyled, ToastText, ToastTitle } from "./style"
 
-const close = require('../../@types/close-2.svg') as string
+import Close from '../../@types/close-2.svg'
 
 export const Toast: React.FC<IToastProps> =
   ({
@@ -48,7 +48,7 @@ export const Toast: React.FC<IToastProps> =
           <img alt="icon" src={icon} />
           <ToastText>{text}</ToastText>
           <CloseContainer>
-            <img onClick={handleDeleteToastById} alt="icon-close" src={close} />
+            <img onClick={handleDeleteToastById} alt="icon-close" src={Close} />
           </CloseContainer>
         </ToastStyled>
       </div>
