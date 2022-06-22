@@ -13,7 +13,7 @@ export interface IToastProps extends IToastStyled {
   animationFromType: string,
 }
 
-export interface IToastContainer{
+export interface IToastContainer {
   position: object,
   autoDelete: true,
   delay: number,

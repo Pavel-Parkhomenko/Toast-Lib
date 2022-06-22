@@ -1,11 +1,10 @@
 {
   "name": "toast-lib",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "toast library",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "rollup -c",
@@ -44,10 +43,12 @@
     "@svgr/rollup": "^6.2.1",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
+    "@types/styled-components": "^5.1.25",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "babel-loader": "^8.2.5",
     "eslint": "^8.17.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
@@ -59,10 +60,10 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-terser": "^7.0.2",
+    "styled-components": "^5.3.5",
     "typescript": "^4.7.3"
   },
   "dependencies": {
-    "@types/styled-components": "^5.1.25",
-    "styled-components": "^5.3.5"
+    "eslint-plugin-import": "^2.26.0"
   }
 }

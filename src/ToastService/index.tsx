@@ -22,8 +22,8 @@ class ToastService {
     ToastService.toastService = this
   }
 
-  getTitle(prop: any){
-    switch(prop.type){
+  getTitle(prop: any) {
+    switch(prop.type) {
       case TOAST_TYPES.success:
         return TOAST_TITLE.success
       case TOAST_TYPES.error:
