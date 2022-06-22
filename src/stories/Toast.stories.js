@@ -1,6 +1,6 @@
 import React from 'react'
 import { toastService } from '../ToastService'
-import { FROM_ANIMATION, POSITION, SPACES, TOAST_TYPES } from '../constants'
+import { FROM_ANIMATION, POSITION, SPACES, ToastType } from '../constants'
 
 export default {
   title: 'Toast',
@@ -17,7 +17,7 @@ export default {
       type: 'string',
       description: "вариант внешнего вида",
       defaultValue: "success",
-      options: Object.values(TOAST_TYPES),
+      options: Object.values(ToastType),
       control: {
         type: "inline-radio"
       },

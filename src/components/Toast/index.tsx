@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { IToastProps } from "../../Interfaces"
+import { IToastProps } from '../../Interfaces'
 import { CloseContainer, ToastStyled, ToastText, ToastTitle } from "./style"
 
 const close = require('../../svgs/close-2.svg') as string

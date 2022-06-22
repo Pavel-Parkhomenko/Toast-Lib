@@ -1,13 +1,15 @@
-export interface IToastStyled{
+import { ToastType } from '../constants'
+
+export interface IToastStyled {
   bgColor: string,
   titleColor: string,
 }
 
 export interface IToastProps extends IToastStyled {
-  type: string,
+  type: keyof typeof ToastType,
   title: string,
   text: string,
-  icon: string,
+  icon: string | undefined,
   id: number,
   deleteFromToastList: (id: number) => void,
   animationFromType: string,

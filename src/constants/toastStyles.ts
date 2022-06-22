@@ -1,24 +1,22 @@
-export const Color = {
-  white: 'white',
-  green: 'green',
-  red: 'red',
-  purple: 'purple',
-  black: 'black',
-  yellow: 'yellow',
+export enum Color {
+  Success = 'white',
+  Error = 'white',
+  Warning = 'black',
+  Info = 'white',
 }
 
-export const TOAST_TYPES = {
-  success: 'success',
-  error: 'error',
-  info: 'info',
-  warning: 'warning',
+export enum BgColor{
+  Success = 'green',
+  Error = 'red',
+  Warning = 'yellow',
+  Info = 'purple',
 }
 
-export const TOAST_TITLE = {
-  success: 'Success',
-  error: 'Error',
-  info: 'Info',
-  warning: 'Warning',
+export enum ToastType {
+  Success = 'Success',
+  Error = 'Error',
+  Info = 'Info',
+  Warning = 'Warning',
 }
 
 export const FROM_ANIMATION = {
