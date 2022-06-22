@@ -3,10 +3,10 @@ import { BgColor, Color, ToastType } from '../constants'
 import { IToastContainer, IToastProps } from '../Interfaces'
 import { ToastContainer } from '../components/Container'
 
-const error = require('../svgs/error.svg') as string
-const info = require('../svgs/info.svg') as string
-const success = require('../svgs/success.svg') as string
-const warning = require('../svgs/warning.svg') as string
+import Error from '../@types/error.svg'
+import Info from '../@types/info.svg'
+import Success from '../@types/success.svg'
+import Warning from '../@types/warning.svg'
 
 let toastList: IToastProps[] = []
 
@@ -42,13 +42,13 @@ class ToastService {
   getIcon(type: keyof typeof ToastType) {
     switch (type) {
       case ToastType.Success:
-        return success
+        return Success
       case ToastType.Error:
-        return error
+        return Error
       case ToastType.Info:
-        return info
+        return Info
       case ToastType.Warning:
-        return warning
+        return Warning
     }
   }
 
