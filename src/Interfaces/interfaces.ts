@@ -1,4 +1,4 @@
-import { ToastType } from '../constants'
+import { ToastType } from '@/constants'
 
 export interface IToastStyled {
   bgColor: string,

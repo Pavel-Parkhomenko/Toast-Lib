@@ -5,7 +5,7 @@ export enum Color {
   Info = 'white',
 }
 
-export enum BgColor{
+export enum BgColor {
   Success = 'green',
   Error = 'red',
   Warning = 'yellow',
@@ -20,28 +20,28 @@ export enum ToastType {
 }
 
 export const FROM_ANIMATION = {
-  fromLeft: "fromLeft",
-  fromRight: "fromRight",
-  fromTop: "fromTop",
-  fromBottom: "fromBottom"
+  fromLeft: 'fromLeft',
+  fromRight: 'fromRight',
+  fromTop: 'fromTop',
+  fromBottom: 'fromBottom',
 }
 
 export const POSITION = {
   topLeft: {
     top: 0,
-    left: 0
+    left: 0,
   },
   topRight: {
     top: 0,
-    right: 0
+    right: 0,
   },
   bottomLeft: {
     bottom: 0,
-    left: 0
+    left: 0,
   },
   bottomRight: {
     bottom: 0,
-    right: 0
+    right: 0,
   },
 }
 

@@ -1,12 +1,12 @@
 import React from 'react'
-import { BgColor, Color, ToastType } from '../constants'
-import { IToastContainer, IToastProps } from '../Interfaces'
-import { ToastContainer } from '../components/Container'
 
-import Error from '../@types/error.svg'
-import Info from '../@types/info.svg'
-import Success from '../@types/success.svg'
-import Warning from '../@types/warning.svg'
+import Error from '@/@types/error.svg'
+import Info from '@/@types/info.svg'
+import Success from '@/@types/success.svg'
+import Warning from '@/@types/warning.svg'
+
+import { BgColor, Color, ToastType } from '@/constants'
+import { IToastContainer, IToastProps } from '@/Interfaces'
 
 let toastList: IToastProps[] = []
 
@@ -24,15 +24,15 @@ class ToastService {
   }
 
   getTitle(type: keyof typeof ToastType): string {
-    return ToastType[type] || ToastType.Success;
+    return ToastType[type] || ToastType.Success
   }
 
   getBgColor(type: keyof typeof ToastType): string {
-    return BgColor[type] || BgColor.Success;
+    return BgColor[type] || BgColor.Success
   }
 
   getTitleColor(type: keyof typeof ToastType): string {
-    return Color[type] || Color.Success;
+    return Color[type] || Color.Success
   }
 
   getId() {
@@ -59,7 +59,7 @@ class ToastService {
       titleColor: this.getTitleColor(prop.type),
       bgColor: this.getBgColor(prop.type),
       icon: this.getIcon(prop.type),
-      id: this.getId()
+      id: this.getId(),
     }
   }
 
@@ -76,11 +76,10 @@ class ToastService {
 
     styleContainerToast.deleteToastById = this.deleteToastById
 
-    return (
-      <ToastContainer
-        styleContainerToast={styleContainerToast}
-        toastList={toastList}
-      />
+    return ({
+        styleContainerToast,
+        toastList,
+      }
     )
   }
 }

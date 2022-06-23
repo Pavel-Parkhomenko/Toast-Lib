@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { IToastStyled } from "../../Interfaces"
+import { IToastStyled } from '../../Interfaces'
 
 export const ToastStyled = styled.div<IToastStyled>`
   z-index: 100;
@@ -17,7 +17,7 @@ export const ToastStyled = styled.div<IToastStyled>`
 
 export const ToastTitle = styled.p`
   color: ${({ theme }) => theme.textColor.muted};
-  font-size: ${({ theme }) => theme.fontSizes[2]}px;;
+  font-size: ${({ theme }) => theme.fontSizes[2]}px;
   margin: 0 0 5px 5px;
 `
 

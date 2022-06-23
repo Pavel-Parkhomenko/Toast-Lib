@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { IPropsToastContainer, IToastProps } from '../../Interfaces'
+import { IPropsToastContainer, IToastProps } from '@/Interfaces'
 import { Portal } from '../Portal'
 import { Toast } from '../Toast'
-import { ContainerToastStyle } from "./style"
+import { ContainerToastStyle } from './style'
 import { ThemeProvider } from 'styled-components'
-import theme from "../../theme"
+import theme from '@/theme'
 
-export const ToastContainer: React.FC<IPropsToastContainer> = ({ styleContainerToast, toastList }) => {
+export const ToastContainer: React.FC<IPropsToastContainer> =
+  ({ styleContainerToast, toastList }) => {
   const {
     position,
     delay,
@@ -46,8 +47,8 @@ export const ToastContainer: React.FC<IPropsToastContainer> = ({ styleContainerT
         spaces={spaces}
         animationDelay={animationDelay}
       >
-        {toastListState.map((toast: JSX.IntrinsicAttributes & IToastProps) =>
-          <Toast key={toast.id} {... {...toast, deleteFromToastList } } />)}
+        { toastListState.map((toast: JSX.IntrinsicAttributes & IToastProps) =>
+          <Toast key={toast.id} {... {...toast, deleteFromToastList } } />) }
       </ContainerToastStyle>
       </ThemeProvider>
     </Portal>

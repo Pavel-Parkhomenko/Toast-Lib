@@ -5,6 +5,7 @@ import scss from "rollup-plugin-scss";
 import typescript from "@rollup/plugin-typescript";
 import { terser } from "rollup-plugin-terser";
 import svgr from '@svgr/rollup'
+import alias from '@rollup/plugin-alias'
 
 export default [
   {
@@ -34,6 +35,12 @@ export default [
       external(),
       resolve(),
       typescript(),
+      alias({
+        resolve: ['.ts', '.tsx', '.js'],
+        entries:[
+          { find: '@', replacement: './src' },
+        ]
+      }),
       terser(),
     ],
   },

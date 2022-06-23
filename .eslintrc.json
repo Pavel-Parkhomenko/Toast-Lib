@@ -36,50 +36,33 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-tag-spacing": "warn",
     "react/jsx-closing-tag-location": "warn",
-    "semi": [
-      1,
-      "never"
-    ],
-    "object-curly-spacing": [
-      1,
-      "always"
+    "react/destructuring-assignment": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-filename-extension": "off",
+    "linebreak-style": "off",
+    "semi": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
     ],
     "import/order": [
-      1,
+      "error",
       {
         "groups": [
-          "external",
-          "builtin",
-          "internal",
-          "sibling",
-          "parent",
-          "index"
-        ],
-        "pathGroups": [
-          {
-            "pattern": "components",
-            "group": "internal"
-          },
-          {
-            "pattern": "common",
-            "group": "internal"
-          },
-          {
-            "pattern": "routes/ **",
-            "group": "internal"
-          },
-          {
-            "pattern": "assets/**",
-            "group": "internal",
-            "position": "after"
-          }
-        ],
-        "pathGroupsExcludedImportTypes":
-        ["internal"],
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
+          [
+            "builtin",
+            "external",
+            "internal"
+          ]
+        ]
       }
     ]
   }
