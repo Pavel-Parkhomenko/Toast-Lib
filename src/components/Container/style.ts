@@ -1,4 +1,6 @@
 import styled, { keyframes } from 'styled-components'
+import { IContainerToastStyle } from '@/Interfaces'
+import { POSITION } from '@/constants'
 
 const fromLeft = keyframes`
   from {
@@ -36,9 +38,9 @@ const fromTop = keyframes`
   }
 `
 
-export const ContainerToastStyle = styled.div<any>`
+export const ContainerToastStyle = styled.div<IContainerToastStyle>`
   position: fixed;
-  margin: ${({ spaces }) => spaces[0]};
+  margin: ${({ spaces }) => spaces};
   user-select: none;
   
   & > div{
@@ -69,5 +71,5 @@ export const ContainerToastStyle = styled.div<any>`
     transition: transform 0.6s ease-in-out;
     animation: ${fromLeft} 0.7s;
   }
-  ${({ position }) => position}
+  ${({ position }) => POSITION[position]}
 `

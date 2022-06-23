@@ -19,6 +19,13 @@ export enum ToastType {
   Warning = 'Warning',
 }
 
+export enum PositionType {
+  topLeft = 'topLeft',
+  topRight = 'topRight',
+  bottomLeft = 'bottomLeft',
+  bottomRight = 'bottomRight',
+}
+
 export const FROM_ANIMATION = {
   fromLeft: 'fromLeft',
   fromRight: 'fromRight',

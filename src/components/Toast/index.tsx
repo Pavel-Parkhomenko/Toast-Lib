@@ -1,7 +1,12 @@
 import React, { useRef } from 'react'
 import Close from '@/@types/close-2.svg'
 import { IToastProps } from '@/Interfaces'
-import { CloseContainer, ToastStyled, ToastText, ToastTitle } from './style'
+import {
+  CloseContainer,
+  ToastStyled,
+  ToastText,
+  ToastTitle,
+} from './style'
 
 export const Toast: React.FC<IToastProps> =
   ({

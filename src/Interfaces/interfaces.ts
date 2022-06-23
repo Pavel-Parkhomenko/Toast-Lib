@@ -1,4 +1,4 @@
-import { ToastType } from '@/constants'
+import { ToastType, PositionType } from '@/constants'
 
 export interface IToastStyled {
   bgColor: string,
@@ -15,13 +15,16 @@ export interface IToastProps extends IToastStyled {
   animationFromType: string,
 }
 
-export interface IToastContainer {
-  position: object,
+export interface IContainerToastStyle {
+  animationDelay: number,
+  spaces: number,
+  position: keyof typeof PositionType,
+}
+
+export interface IToastContainer extends IContainerToastStyle{
   autoDelete: true,
   delay: number,
   deleteToastById: (id: number) => IToastProps[],
-  animationDelay: number,
-  spaces: number,
 }
 
 export interface IPropsToastContainer {

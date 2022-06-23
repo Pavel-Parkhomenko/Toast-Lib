@@ -37,7 +37,6 @@
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
     "@storybook/addon-links": "^6.5.9",
-    "@storybook/builder-webpack4": "^6.5.9",
     "@storybook/manager-webpack4": "^6.5.9",
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
@@ -67,6 +66,7 @@
     "typescript": "^4.7.3"
   },
   "dependencies": {
+    "@storybook/builder-webpack4": "^6.5.9",
     "module-alias": "^2.2.2"
   }
 }

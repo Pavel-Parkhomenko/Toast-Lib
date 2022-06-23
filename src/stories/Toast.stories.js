@@ -1,9 +1,9 @@
 import React from 'react'
 import {
   FROM_ANIMATION,
-  POSITION,
   SPACES,
   ToastType,
+  PositionType,
 } from '../constants'
 import { ToastContainer } from '../components/Container'
 import { toastService } from '../ToastService'
@@ -17,7 +17,7 @@ export default {
       defaultValue: 'default text for example',
       control: {
         type: 'text',
-      }
+      },
     },
     toastType: {
       type: 'string',
@@ -32,7 +32,7 @@ export default {
       type: 'string',
       description: 'положение контейнера с тостами',
       defaultValue: 'topLeft',
-      options: ['bottomRight', 'bottomLeft', 'topRight', 'topLeft'],
+      options: Object.values(PositionType),
       control: {
         type: 'inline-radio',
       },
@@ -57,7 +57,7 @@ export default {
     },
     toastDelay: {
       type: 'number',
-      description: 'margin контейнера',
+      description: 'длительность жизни тоста',
       defaultValue: 3000,
       options: [3000, 4000, 5000, 6000, 7000, 8000, 9000],
       control: {
@@ -76,10 +76,10 @@ export default {
   },
 }
 
-export const ToastExample = (args: any) => (
+export const ToastExample = args => (
   <ToastContainer
     {...toastService.createToast({
-      position: POSITION[args.toastPosition],
+      position: args.toastPosition,
       autoDelete: true,
       delay: args.toastDelay,
       animationDelay: args.toastAnimationDelay,

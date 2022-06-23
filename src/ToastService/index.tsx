@@ -66,7 +66,7 @@ class ToastService {
   deleteToastById(id: number): IToastProps[] {
     const deleteToastIndex = toastList.findIndex(toast => toast.id === id)
     toastList.splice(deleteToastIndex, 1)
-    return toastList
+    return [...toastList]
   }
 
   createToast(styleContainerToast: IToastContainer, prop: IToastProps) {
@@ -77,10 +77,9 @@ class ToastService {
     styleContainerToast.deleteToastById = this.deleteToastById
 
     return ({
-        styleContainerToast,
-        toastList,
-      }
-    )
+      styleContainerToast,
+      toastList,
+    })
   }
 }
 
